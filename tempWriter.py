@@ -12,7 +12,7 @@ mode = 0o600  # FIFO
 class DHTWriter():
     def __init__(self):
         self.path = "/home/cameron/pipe/temp.txt"
-        self.DHTSensor = adafruit_dht.DHT11(board.D14)
+        self.DHTSensor = adafruit_dht.DHT11(board.D2)
 
     def writeToPipe(self):
         file = open(self.path, "w")

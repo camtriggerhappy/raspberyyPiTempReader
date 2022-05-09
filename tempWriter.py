@@ -43,7 +43,7 @@ while 1:
     print("in the loop")
     writer.writeToPipe()
     time.sleep(5)
-def main():
+
 
 
 if __name__ == '__main__':

@@ -14,13 +14,16 @@ class DHTWriter():
     def __init__(self):
         path = "/home/cameron/pipe/tempPipe"
         mode = 0o600  # FIFO
-
-        os.mkfifo(path, mode)
         self.DHTSensor = adafruit_dht.DHT11(board.D14)
+    try:
+        os.mkfifo(path, mode)
 
+
+    except: FileExistsError
     def writeToPipe(self):
         file = open(path, "w")
         file.write(self.getTemp)
+        file.close()
 
     def getTemp(self):
         try:

@@ -40,9 +40,12 @@ class DHTWriter():
 
 writer = DHTWriter()
 
-
-def __main__():
+def main():
     while 1:
         print("in the loop")
         writer.writeToPipe()
         time.sleep(5)
+
+if __name__ == '__main__':
+    main()
+

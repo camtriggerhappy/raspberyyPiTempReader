@@ -2,6 +2,7 @@ import os
 import time
 
 import board
+import asyncio
 import adafruit_dht
 
 path = "/home/cameron/pipe/tempPipe"
@@ -21,7 +22,6 @@ class DHTWriter():
     except FileExistsError:
         print("file is already there")
 
-
     def writeToPipe(self):
         file = open(path, "w+")
         file.write(self.getTemp)
@@ -38,8 +38,10 @@ class DHTWriter():
             raise error
 
 
+writer = DHTWriter()
+
+
 def __main__():
-    writer = DHTWriter()
     while 1:
         print("in the loop")
         writer.writeToPipe()

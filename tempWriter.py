@@ -23,7 +23,7 @@ class DHTWriter():
     def getTemp(self):
         try:
             print(self.DHTSensor.temperature)
-            return self.DHTSensor.temperature * (9 / 5) + 32  # convert to Fahrenheit
+            return (self.DHTSensor.temperature * (9 / 5)) + 32  # convert to Fahrenheit
         except RuntimeError as error:
             # Errors happen fairly often, DHT's are hard to read, just keep going
             print(error.args[0])

@@ -4,10 +4,7 @@ import time
 import board
 import adafruit_dht
 
-path = "/home/cameron/pipe/tempPipe"
-mode = 0o600  # FIFO
 
-os.mkfifo(path, mode)
 
 
 class DHTWriter():

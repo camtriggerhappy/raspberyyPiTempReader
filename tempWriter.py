@@ -15,7 +15,7 @@ class DHTWriter():
         self.DHTSensor = adafruit_dht.DHT11(board.D14)
 
     def writeToPipe(self):
-        file = os.open(path, "w")
+        file = open(path, "w")
         file.truncate(0)
         file.write(self.getTemp)
         file.close()

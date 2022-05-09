@@ -23,7 +23,7 @@ class DHTWriter():
         print("file is already there")
 
     def writeToPipe(self):
-        file = open(path, "w+")
+        file = open(path, "w")
         file.write(self.getTemp)
         file.close()
 

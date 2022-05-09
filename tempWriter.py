@@ -16,7 +16,7 @@ class DHTWriter():
         mode = 0o600  # FIFO
 
         os.mkfifo(path, mode)
-        self.DHTSensor = adafruit_dht.DHT11(board.D0)
+        self.DHTSensor = adafruit_dht.DHT11(board.D14)
 
     def writeToPipe(self):
         file = open(path, "w")
@@ -32,9 +32,9 @@ class DHTWriter():
             self.DHTSensor.exit()
             raise error
 
+def __main__():
+    writer = DHTWriter()
+    while True:
+        time.sleep(30)
 
-writer = DHTWriter()
-while True:
-    time.sleep(30)
-
-    writer.writeToPipe()
+        writer.writeToPipe()

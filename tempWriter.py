@@ -41,5 +41,6 @@ class DHTWriter():
 def __main__():
     writer = DHTWriter()
     while True:
+        print("in the loop")
         writer.writeToPipe()
         time.sleep(5)

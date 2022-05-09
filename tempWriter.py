@@ -17,7 +17,7 @@ class DHTWriter():
     def writeToPipe(self):
         file = open(self.path, "w")
         file.truncate(0)
-        file.write(self.getTemp)
+        file.write(self.getTemp())
         file.close()
 
     def getTemp(self):

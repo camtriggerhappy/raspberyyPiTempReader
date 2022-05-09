@@ -19,7 +19,8 @@ class DHTWriter():
         os.mkfifo(path, mode)
 
 
-    except: FileExistsError
+    except FileExistsError as e:
+        print(e)
     def writeToPipe(self):
         file = open(path, "w")
         file.write(self.getTemp)

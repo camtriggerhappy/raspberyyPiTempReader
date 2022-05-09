@@ -36,7 +36,7 @@ writer = DHTWriter()
 while 1:
     print("in the loop")
     writer.writeToPipe()
-    time.sleep(5.0948)
+    time.sleep(.8)
 
 
 

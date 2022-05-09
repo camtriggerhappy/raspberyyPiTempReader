@@ -4,13 +4,15 @@ import time
 import board
 import adafruit_dht
 
+path = "/home/cameron/pipe/tempPipe"
+mode = 0o600  # FIFO
 
 
 
 class DHTWriter():
     def __init__(self):
-        path = "/home/cameron/pipe/tempPipe"
-        mode = 0o600  # FIFO
+        self.path = "/home/cameron/pipe/tempPipe"
+        self.mode = 0o600  # FIFO
         self.DHTSensor = adafruit_dht.DHT11(board.D14)
     try:
         os.mkfifo(path, mode)

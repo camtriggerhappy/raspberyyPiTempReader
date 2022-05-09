@@ -18,8 +18,9 @@ class DHTWriter():
         os.mkfifo(path, mode)
 
 
-    except FileExistsError as e:
-        print(e)
+    except FileExistsError:
+        print("file is already there")
+
 
     def writeToPipe(self):
         file = open(path, "w+")
